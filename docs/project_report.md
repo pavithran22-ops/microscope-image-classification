@@ -67,21 +67,21 @@ Where $\mathbf{K} \in \mathbb{R}^{k_h \times k_w}$ represents a learnable kernel
 
 ```mermaid
 graph TD
-    A([Start Project]) --> B[Data Acquisition: Synthetic Cell Generator / Custom NIH Dataset]
-    B --> C[Preprocessing: Grayscale Conversion, 64x64 Resize, [0, 1] Normalization]
-    C --> D[Stratified Split: 70% Train, 15% Validation, 15% Test]
-    D --> E[FCN Pipeline: Flatten 4096 -> Dense 128 -> Dropout -> Dense 64 -> Softmax]
-    D --> F[CNN Pipeline: Conv2D 32 -> MaxPool -> Conv2D 64 -> MaxPool -> Flatten -> Dense 64 -> Softmax]
-    E --> G[Train FCN: Adam, lr=0.001, EarlyStopping, 18 Epochs]
-    F --> H[Train CNN: Adam, lr=0.001, EarlyStopping, 18 Epochs]
-    G --> I[Save models/fcn_model.keras & Record History]
-    H --> J[Save models/cnn_model.keras & Record History]
-    I --> K[Evaluate on Identical Unseen Test Set]
+    A(["Start Project"]) --> B["Data Acquisition: Synthetic Cell Generator / Custom NIH Dataset"]
+    B --> C["Preprocessing: Grayscale Conversion, 64x64 Resize, [0, 1] Normalization"]
+    C --> D["Stratified Split: 70% Train, 15% Validation, 15% Test"]
+    D --> E["FCN Pipeline: Flatten 4096 -> Dense 128 -> Dropout -> Dense 64 -> Softmax"]
+    D --> F["CNN Pipeline: Conv2D 32 -> MaxPool -> Conv2D 64 -> MaxPool -> Flatten -> Dense 64 -> Softmax"]
+    E --> G["Train FCN: Adam, lr=0.001, EarlyStopping, 18 Epochs"]
+    F --> H["Train CNN: Adam, lr=0.001, EarlyStopping, 18 Epochs"]
+    G --> I["Save models/fcn_model.keras & Record History"]
+    H --> J["Save models/cnn_model.keras & Record History"]
+    I --> K["Evaluate on Identical Unseen Test Set"]
     J --> K
-    K --> L[Calculate Accuracy, Precision, Recall, F1-Score & Confusion Matrices]
-    L --> M[Extract Intermediate Feature Maps from Conv2D Layer 1]
-    M --> N[Generate Visualizations: Curves, Heatmaps, Comparison Charts]
-    N --> O([Comprehensive Comparative Analysis & Viva Defense])
+    K --> L["Calculate Accuracy, Precision, Recall, F1-Score & Confusion Matrices"]
+    L --> M["Extract Intermediate Feature Maps from Conv2D Layer 1"]
+    M --> N["Generate Visualizations: Curves, Heatmaps, Comparison Charts"]
+    N --> O(["Comprehensive Comparative Analysis & Viva Defense"])
 ```
 
 ### Detailed Working Steps:

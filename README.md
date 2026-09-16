@@ -40,18 +40,18 @@ Automated cell classification models must detect localized intracellular feature
 
 ```mermaid
 graph TD
-    Start([Start]) --> Load[Load Microscope Images]
-    Load --> Preprocess[Preprocess Images: 64x64 Grayscale, [0, 1] Normalization]
-    Preprocess --> Split[Split Dataset: 70% Train, 15% Val, 15% Test]
-    Split --> TrainFCN[Train Fully Connected Network]
-    TrainFCN --> EvalFCN[Evaluate FCN on Test Set]
-    Split --> TrainCNN[Train CNN]
-    TrainCNN --> EvalCNN[Evaluate CNN on Test Set]
-    EvalFCN --> Compare[Compare Results & Metrics]
+    Start(["Start"]) --> Load["Load Microscope Images"]
+    Load --> Preprocess["Preprocess Images: 64x64 Grayscale, [0, 1] Normalization"]
+    Preprocess --> Split["Split Dataset: 70% Train, 15% Val, 15% Test"]
+    Split --> TrainFCN["Train Fully Connected Network"]
+    TrainFCN --> EvalFCN["Evaluate FCN on Test Set"]
+    Split --> TrainCNN["Train CNN"]
+    TrainCNN --> EvalCNN["Evaluate CNN on Test Set"]
+    EvalFCN --> Compare["Compare Results & Metrics"]
     EvalCNN --> Compare
-    Compare --> Analyze[Analyze Feature Learning & Conv2D Intermediate Activations]
-    Analyze --> Conclusion[Conclusion: CNN Preserves Spatial Structure & Enables Weight Sharing]
-    Conclusion --> End([End])
+    Compare --> Analyze["Analyze Feature Learning & Conv2D Intermediate Activations"]
+    Analyze --> Conclusion["Conclusion: CNN Preserves Spatial Structure & Enables Weight Sharing"]
+    Conclusion --> End(["End"])
 ```
 
 ---
